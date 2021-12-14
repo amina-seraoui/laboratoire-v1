@@ -1,0 +1,49 @@
+#calendar {
+    background-color: $grey;
+    padding: ratio-space(8px) 0;
+
+    .dates {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        margin: ratio-space(4px) 0;
+
+        .date {
+            width: 24.5%;
+            transform: skewY(-11deg);
+            
+            .date-content {
+                padding: ratio-space(1px);
+                background-color: $white;
+                transform: rotate(11deg);
+
+                .date-text {
+                    font-size: 12px;
+                }
+            }
+            
+            &:nth-child(odd) {
+                .date-title, .date-text {
+                    color: $blue;
+                }
+            }
+            
+            &:nth-child(even) {
+                .date-title, .date-text {
+                    color: $orange;
+                }
+            }
+            
+            @media #{$media-down-md} {
+                width: 100%;
+                transform: none;
+                margin: ratio-space(1px) 0;
+                
+                .date-content {
+                    transform: none;
+                }
+            }
+        }
+    }
+}

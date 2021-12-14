@@ -1,0 +1,89 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: ratio-space(2px) 0;
+    background-color: $white;
+
+    @media #{$media-down-md} {
+        position: fixed;
+        width: 100%;
+        z-index: 900;
+        margin: 0;
+        top: 0;
+        height: 21vh;
+    }
+
+    #open-menu {
+        display: none;
+        cursor: pointer;
+
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        top: ratio-space(4px);
+        left: ratio-space(4px);
+
+        @media #{$media-down-md} {
+            display: block;
+        }
+    }
+    .navbar {
+        ul {
+            margin: auto;
+            display: flex;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li {
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-right: ratio-space(1px);
+                border-right: solid 2px $grey;
+                padding-right: ratio-space(1px);
+                padding-bottom: ratio-space(1px);
+                padding-top: ratio-space(1px);
+                
+                &:last-child {
+                    border: none;
+                }
+
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 2rem;
+                    min-width: 64px;
+                    max-width: 105px;
+                    position: relative;
+                    
+                    img {
+                        width: 24px;
+                    }
+
+                    &::after {
+                        transition: .2s;
+                        position: absolute;
+                        content: '';
+                        bottom: -8px;
+                        left: 0;
+                        height: 3px;
+                        width: 0;
+                        background: linear-gradient(to right, $grey, $blue);
+                        border-radius: 50px;
+                    }
+                    &:hover {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media #{$media-down-md} {
+            display: none;
+        }
+    }
+}

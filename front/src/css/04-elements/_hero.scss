@@ -1,0 +1,52 @@
+#hero {
+    display: flex;
+    position: relative;
+    justify-content: right;
+    background: $blue url('../img/smiling-woman.jpg') left / contain no-repeat;
+
+    @media #{$media-down-md} {
+        margin-top: 21vh;
+    }
+
+    .text {
+        padding: 0 ratio-space(4px);
+        width: 50%;
+        text-align: left;
+        background: url('../img/carte-france.jpg') 50% no-repeat;
+        background-position: right;
+        
+        h1, p {
+            width: 50%;
+            color: $white;
+        }
+
+        .btn {
+            margin: ratio-space(4px) 0;
+        }
+    }
+    
+    @media #{$media-down-xl} {
+        .text {
+            background: none;
+
+            h1, p {
+                width: 100%;
+            }
+        }
+    }
+    @media #{$media-down-lg} {
+        background-size: cover;
+        background-position: center top;
+        .text {
+            text-align: center;
+            background-color: rgba($blue, .5);
+            width: 100%;
+
+            h1, p {
+                width: 100%;
+            }
+        }
+    }
+
+    
+}

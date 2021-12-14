@@ -1,0 +1,8 @@
+.container {
+    margin: auto;
+    max-width: 1000px;
+    
+    @media #{$media-down-md} {
+        max-width: 85%;
+    }
+}

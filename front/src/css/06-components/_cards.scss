@@ -1,0 +1,105 @@
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    .card {
+        width: 45%;
+        margin: ratio-space(5px) ratio-space(2px);
+        position: relative;
+
+        @media #{$media-down-md} {
+            width: 100%;
+        }
+
+        .card-icon {
+            position: absolute;
+            width: 100%;
+            top: -30px;
+
+            img {
+                transition: .3s;
+            }
+            
+            &::before {
+                position: absolute;
+                transition: .3s;
+                content: '';
+                background-color: $blue;
+                height: 10px;
+                width: 0;
+                left: 0;
+                top: 50%;
+            }
+            
+            &::after {
+                position: absolute;
+                transition: .3s;
+                content: '';
+                background-color: $blue;
+                height: 10px;
+                width: 0;
+                right: 0;
+                top: 50%;
+            }
+        }
+
+        &:hover {
+            .card-icon {
+                img {
+                    transform: rotate(360deg);
+                }
+
+                &::before {
+                    width: 40%;
+                }
+                &::after {
+                    width: 40%;
+                }
+            }
+        }
+        
+        .card-content {
+            border: solid 2px $grey;
+            border-top: none;
+            padding:ratio-space(4px);
+
+            .card-title {
+                @extend h2;
+            }
+
+            .card-text {
+                margin-bottom: ratio-space(4px);
+                font-weight: 600;
+            }
+    
+            .card-btn {
+                @extend .btn;
+            }
+        }
+
+        &.blue {
+            .card-icon::after, .card-icon::before, .card-btn {
+                background-color: $blue;
+            }
+        }
+
+        &.yellow {
+            .card-icon::after, .card-icon::before, .card-btn {
+                background-color: $yellow;
+            }
+        }
+
+        &.red {
+            .card-icon::after, .card-icon::before, .card-btn {
+                background-color: $red;
+            }
+        }
+
+        &.green {
+            .card-icon::after, .card-icon::before, .card-btn {
+                background-color: $green;
+            }
+        }
+    }
+}

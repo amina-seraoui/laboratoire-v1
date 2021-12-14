@@ -1,0 +1,11 @@
+footer {
+    background-color: $orange;
+    padding: ratio-space(8px) 0;
+    text-align: center;
+    
+    p {
+        color: $white;
+        margin-bottom: ratio-space(2px);
+        font-size: 18px;
+    }
+}
